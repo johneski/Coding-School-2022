@@ -74,16 +74,16 @@ while (true)
 //5
 
 
-static int ReadInteger()
+static long ReadInteger()
 {
-    int seconds;
+    long seconds;
     while (true)
     {
         try
         {
             Console.Write("Enter an integer: ");
             string input = Console.ReadLine();
-            seconds = Int32.Parse(input);
+            seconds = Int64.Parse(input);
             break;
         }
         catch (FormatException e)
@@ -95,24 +95,30 @@ static int ReadInteger()
 }
 
 
-//6
-int seconds = ReadInteger();
+
+long seconds = ReadInteger();
    
-int secs = seconds % 60;
-int mins = seconds / 60 % 60;
-int hours = seconds / 3600;
+int mins = (int) seconds / 60 % 60;
+int hours = (int)seconds / 3600 % 24;
+int days = (int)seconds / (60 * 60 * 60) % 365;
+int years = (int) seconds / (60 * 60 * 60 * 60);
 Console.WriteLine("Time without .NET libraries");
-Console.WriteLine($"{hours}:{mins}:{secs}");
+Console.WriteLine($"{years}:{days}   {hours}:{mins}");
 
 
 
 
-//7
+//6
 
 TimeSpan time = TimeSpan.FromSeconds(seconds);
 
 Console.WriteLine("\nTime using .NET libraries");
-Console.WriteLine(time.ToString(@"hh\:mm\:ss\:fff"));
+Console.WriteLine(time.ToString(@"y\:d\:hh\:mm\:ss\:fff"));
 
 
 
+//7
+Console.Write("Enter Celcius: ");
+long celcius = ReadInteger();
+Console.WriteLine($"Celcius to Farenheit: {celcius * 1.8 + 32}");
+Console.WriteLine($"Celcius to Kelvin: {celcius + 273.15}");

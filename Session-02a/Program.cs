@@ -83,7 +83,7 @@ static long ReadInteger()
         {
             Console.Write("Enter an integer: ");
             string input = Console.ReadLine();
-            seconds = Int64.Parse(input);
+            seconds = long.Parse(input);
             break;
         }
         catch (FormatException e)
@@ -113,7 +113,7 @@ Console.WriteLine($"{years}:{days}   {hours}:{mins}");
 TimeSpan time = TimeSpan.FromSeconds(seconds);
 
 Console.WriteLine("\nTime using .NET libraries");
-Console.WriteLine(time.ToString(@"y\:d\:hh\:mm\:ss\:fff"));
+Console.WriteLine(years + ":" +time.ToString(@"d\:hh\:mm"));
 
 
 

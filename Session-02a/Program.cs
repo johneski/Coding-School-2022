@@ -72,28 +72,46 @@ while (true)
 }
 
 //5
-int seconds;
-while (true)
+
+
+static int ReadInteger()
 {
-    try
+    int seconds;
+    while (true)
     {
-        Console.Write("Enter an integer: ");
-        string input = Console.ReadLine();
-        seconds = Int32.Parse(input);
-        break;
+        try
+        {
+            Console.Write("Enter an integer: ");
+            string input = Console.ReadLine();
+            seconds = Int32.Parse(input);
+            break;
+        }
+        catch (FormatException e)
+        {
+            Console.WriteLine("Please enter a valid integer number");
+        }
     }
-    catch (FormatException e)
-    {
-        Console.WriteLine("Please enter a valid integer number");
-    }
+    return seconds;
 }
 
+
 //6
+int seconds = ReadInteger();
+   
+int secs = seconds % 60;
+int mins = seconds / 60 % 60;
+int hours = seconds / 3600;
+Console.WriteLine("Time without .NET libraries");
+Console.WriteLine($"{hours}:{mins}:{secs}");
+
+
 
 
 //7
+
 TimeSpan time = TimeSpan.FromSeconds(seconds);
 
+Console.WriteLine("\nTime using .NET libraries");
 Console.WriteLine(time.ToString(@"hh\:mm\:ss\:fff"));
 
 

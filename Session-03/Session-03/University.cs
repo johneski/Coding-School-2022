@@ -45,7 +45,7 @@ namespace Session_03
                 int index = ScheduledCourses.Count(s => s != null);
                 Schedule schedule = new Schedule(courseID, professorID, datetime);
                 ScheduledCourses[index] = schedule;
-            }catch(IndexOutOfRangeException ex)
+            }catch(IndexOutOfRangeException)
             {
                 Console.WriteLine("The schedule is full!");
             }

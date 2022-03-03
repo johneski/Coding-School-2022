@@ -15,6 +15,7 @@ namespace Session_03
 
         public Grade(Guid studentID, Guid courseID, int grade)
         {
+            ID = Guid.NewGuid();
             StudentID = studentID;
             CourseID = courseID;
             Value = grade;

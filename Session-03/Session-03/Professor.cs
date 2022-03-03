@@ -11,7 +11,7 @@ namespace Session_03
     {
         public string Rank { get; set; }
         public Course[] Courses;
-        private string[] RankList = {"full", "associate", "assistant"};
+        private readonly string[] RankList = {"full", "associate", "assistant"};
         public Professor(string name, ushort age, string rank, Course[] courses) : base(name, age)
         {
             Courses = courses;

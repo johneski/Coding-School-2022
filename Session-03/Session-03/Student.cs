@@ -9,12 +9,11 @@ namespace Session_03
     internal class Student : Person
     {
         public int RegistrationNumber;
-        public Course[] Courses;
+        public Course[] Courses = new Course[20];
 
-        public Student(string name, ushort age, int registrationNumber, Course[] courses) : base(name, age)
+        public Student(string name, ushort age, int registrationNumber) : base(name, age)
         {
             RegistrationNumber = registrationNumber;
-            Courses = courses;
         }
 
         public void Attend(Course course, DateTime datetime)

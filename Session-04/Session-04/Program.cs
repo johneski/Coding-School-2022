@@ -71,3 +71,8 @@ sortedArray = ex5.SelectionSort(secondArray);
 
 ex5.printArray(sortedArray);
 
+int[] thirdArray = { 0, -2, 1, 20, -31, 50, -4, 17, 89, 100 };
+
+sortedArray = ex5.SelectionSort(thirdArray);
+
+ex5.printArray(sortedArray);

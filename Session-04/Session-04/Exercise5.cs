@@ -54,7 +54,30 @@ namespace Session_04
                 temp = array[i];
                 array[i] = min;
                 array[index] = temp;
+                index = i+1;
+            }
+
+            return array;
+        }
+        
+        public int[] InsertionSort(int[] array)
+        {
+            int temp;
+            int index;
+            for (int i = 1; i < array.Length; i++)
+            {
                 index = i;
+                for (int j = i-1; j >= 0; j--)
+                {
+                    
+                    if(array[index] < array[j])
+                    {
+                        temp = array[j];
+                        array[j] = array[index];
+                        array[index] = temp;
+                        index--;
+                    }
+                }
             }
 
             return array;

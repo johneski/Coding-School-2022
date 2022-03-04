@@ -25,15 +25,15 @@ namespace Session_04
             return sum;
         }
 
-        public int Product(int number)
+        public ulong Product(int number)
         {
             if (number == 0) return 0;
 
-            int product = 1;
+            ulong product = 1;
 
             for (int i = 1; i <= number; i++)
             {
-                product *= i;
+                product *= Convert.ToUInt64(i);
             }
 
             return product;

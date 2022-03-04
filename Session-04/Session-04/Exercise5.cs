@@ -31,5 +31,43 @@ namespace Session_04
 
             return array;
         }
+
+        public int[] SelectionSort(int[] array)
+        {
+            int min;
+            int temp;
+            int index = 0;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                min = array[i];
+
+                for (int j = i+1; j < array.Length; j++)
+                {
+                    if (array[j] < min)
+                    {
+                        min = array[j];
+                        index = j;
+                    }
+                }
+
+                temp = array[i];
+                array[i] = min;
+                array[index] = temp;
+                index = i;
+            }
+
+            return array;
+        }
+
+
+        public void printArray(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + ", ");
+            }
+            Console.WriteLine();
+        }
     }
 }

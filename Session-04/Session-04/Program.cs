@@ -38,6 +38,7 @@ number = new Validation().Validate();
 int[] primeNumbers = ex3.FindPrimeNumbers(number);
 
 ex3.printArray(primeNumbers);
+
 Console.WriteLine();
 
 // Exercise 4 *********************************************
@@ -51,6 +52,8 @@ var ex4 = new Exercise4();
 int[] mulArray = ex4.multiply(array1, array2);
 ex3.printArray(mulArray);
 
+Console.WriteLine();
+
 // Exercise 5 * ********************************************
 
 Console.WriteLine("Exercise 5");
@@ -60,5 +63,11 @@ int[] array = { 0, -2, 1, 20, -31, 50, -4, 17, 89, 100};
 var ex5 = new Exercise5();
 int[] sortedArray = ex5.BubbleSort(array);
 
-ex3.printArray(sortedArray);
+ex5.printArray(sortedArray);
+
+int[] secondArray = { 0, -2, 1, 20, -31, 50, -4, 17, 89, 100 };
+
+sortedArray = ex5.SelectionSort(secondArray);
+
+ex5.printArray(sortedArray);
 

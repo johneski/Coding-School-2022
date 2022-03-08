@@ -19,23 +19,72 @@ namespace Session_05
         public ActionResponse Execute(ActionRequest request)
         {
             var response = new ActionResponse();
+            var logger = new MessageLogger();
             decimal value;
+            Message msg;
 
-            if(request.Action == Enumerations.ActionEnum.Convert)
+
+            if (request.Action == Enumerations.ActionEnum.Convert)
             {
+                msg = new Message("Transaction type: Convert\n");
+
+
                 if (decimal.TryParse(request.Input, out value))
                 {
-                    response.Output = ToBinary(request);
+                    response.Output = DecimalToBinary(request);
+                    msg.Append(response.Output);
+                }
+                else
+                {
+                    msg.Append("Something went wrong!");
+                }
 
+            }
+            else if (request.Action == Enumerations.ActionEnum.UpperCase)
+            {
+                msg = new Message("Transaction type: UpperCase");
+
+                if(request.Input.GetType() == typeof(string) && request.Input.Split(" ").Length > 1)
+                {
+                    string longestWord = FindLongestWord(request.Input.Split(" "));
+                    response.Output = longestWord.ToUpper();
+                    msg.Append("Longest word to Upper: " + response.Output);
+                }
+                else
+                {
+                    msg.Append("Something went wrong!");
                 }
             }
+            else if (request.Action == Enumerations.ActionEnum.Reverse)
+            {
+                msg = new Message("Transaction type: Reverse");
 
+                if (request.Input.GetType() == typeof(string))
+                {
+                    response.Output = ReverseString(request.Input);
+                }
+            }
+            else
+            {
+                response.Output = "There is no such action. Please try again!";
+                msg = new Message("Wrong transaction type!");
+            }
+
+
+            logger.Write(msg);
 
             return response;
         }
 
+        private string FindLongestWord(string[] array)
+        {
+            int longest = array.Max(s => s.Length);
+            string longestWord = array.FirstOrDefault(s => s.Length == longest);
 
-        private string ToBinary(ActionRequest req)
+            return longestWord;
+        }
+
+        private string DecimalToBinary(ActionRequest req)
         {
             string[] s = req.Input.Split(",");
             int intPart = int.Parse(s[0]);
@@ -45,16 +94,24 @@ namespace Session_05
             int numOfIterations = 0;
             do
             {
-
-                result += Convert.ToString((int)floatPart * 2);
+                floatPart *= 2;
+                result += Convert.ToString((int)floatPart);
+                
                 floatPart -= (int)floatPart;
                 numOfIterations++;
-            } while (floatPart != 0 || numOfIterations > 20);
+            } while (numOfIterations < 20 && floatPart != 0);
 
 
 
             return result;
 
+        }
+
+        private string ReverseString(string name)
+        {
+            char[] nameArray = name.ToCharArray();
+            Array.Reverse(nameArray);
+            return new string(nameArray);
         }
     }
 }

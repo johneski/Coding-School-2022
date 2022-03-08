@@ -12,10 +12,11 @@ namespace Session_05
         public string Input { get; set; }
         public Enumerations.ActionEnum Action;
 
-        public ActionRequest(string input = "")
+        public ActionRequest(string input, Enumerations.ActionEnum action)
         {
             RequestID = Guid.NewGuid();
             Input = input;
+            Action = action;
         }
     }
 }

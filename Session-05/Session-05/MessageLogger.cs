@@ -12,7 +12,7 @@ namespace Session_05
         private int _numOfMsgs;
         private int _index = 0;
 
-        public MessageLogger(int numOfMsgs = 100)
+        public MessageLogger(int numOfMsgs = 1000)
         {
             Messages = new Message[numOfMsgs];
             _numOfMsgs = numOfMsgs;

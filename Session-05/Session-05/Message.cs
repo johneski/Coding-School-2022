@@ -18,5 +18,10 @@ namespace Session_05
             TimeStamp = DateTime.Now;
             ID = Guid.NewGuid();
         }
+
+        public void Append(string txt)
+        {
+            MessageTxt += "\n" + txt + "\n";
+        }
     }
 }

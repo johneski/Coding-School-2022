@@ -12,11 +12,10 @@ namespace Session_05
         public Guid ResponseID { get; set; }
         public string Output { get; set; }
 
-        public ActionResponse(string output = "")
+        public ActionResponse()
         {
             RequestID = Guid.NewGuid();
             ResponseID = Guid.NewGuid();
-            Output = output;
         }
     }
 }

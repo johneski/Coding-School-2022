@@ -8,7 +8,7 @@ namespace Session_05
 {
     internal abstract class Logger
     {
-        public abstract Message[] ReadAll();
+        public abstract string ReadAll();
         public abstract void Clear();
         public abstract void Write(Message msg);
     }

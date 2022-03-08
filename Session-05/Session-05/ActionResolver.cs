@@ -19,14 +19,13 @@ namespace Session_05
         public ActionResponse Execute(ActionRequest request)
         {
             var response = new ActionResponse();
-            var logger = new MessageLogger();
             decimal value;
             Message msg;
 
 
             if (request.Action == Enumerations.ActionEnum.Convert)
             {
-                msg = new Message("Transaction type: Convert\n");
+                msg = new Message("Transaction type: Convert");
 
 
                 if (decimal.TryParse(request.Input, out value))
@@ -36,7 +35,8 @@ namespace Session_05
                 }
                 else
                 {
-                    msg.Append("Something went wrong!");
+                    msg.Append("Couldn't convert to binary!");
+                    response.Output = "Couldn't convert to binary! Please check the input.";
                 }
 
             }
@@ -52,7 +52,8 @@ namespace Session_05
                 }
                 else
                 {
-                    msg.Append("Something went wrong!");
+                    response.Output = "Something went wrong!";
+                    msg.Append("Couldn't convert to UpperCase!");
                 }
             }
             else if (request.Action == Enumerations.ActionEnum.Reverse)
@@ -62,16 +63,24 @@ namespace Session_05
                 if (request.Input.GetType() == typeof(string))
                 {
                     response.Output = ReverseString(request.Input);
+                    msg.Append("Reversed string: " + response.Output);
+                }
+                else
+                {
+                    response.Output = "Couldn't reverse the string. Please check the input";
+                    msg.Append("Couldn't reverse the string!");
                 }
             }
             else
             {
                 response.Output = "There is no such action. Please try again!";
-                msg = new Message("Wrong transaction type!");
+
+                msg = new Message("Transaction type: Error");
+                msg.Append("Wrong transaction type!");
             }
 
 
-            logger.Write(msg);
+            Logger.Write(msg);
 
             return response;
         }
@@ -88,7 +97,7 @@ namespace Session_05
         {
             string[] s = req.Input.Split(",");
             int intPart = int.Parse(s[0]);
-            decimal floatPart = decimal.Parse("0,"+s[1]);
+            decimal floatPart = decimal.Parse("0," + s[1]);
 
             string result = Convert.ToString(intPart, 2) + ",";
             int numOfIterations = 0;

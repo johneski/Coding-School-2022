@@ -18,9 +18,23 @@ namespace Session_05
             _numOfMsgs = numOfMsgs;
         }
 
-        public override Message[] ReadAll()
+        public override string ReadAll()
         {
-            return Messages;
+            string allMessages = string.Empty;
+            try
+            {
+                foreach (Message message in Messages)
+                {
+                    allMessages += message.MessageTxt + "\n";
+                }
+            }
+            catch(NullReferenceException ex)
+            {
+                
+            }
+            
+
+            return allMessages;
         }
 
         public override void Clear()

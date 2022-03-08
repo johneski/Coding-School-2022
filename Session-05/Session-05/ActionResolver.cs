@@ -62,7 +62,7 @@ namespace Session_05
 
                 if (request.Input.GetType() == typeof(string))
                 {
-                    response.Output = ReverseString(request.Input);
+                    response.Output = ReverseStringRecursion(request.Input);
                     msg.Append("Reversed string: " + response.Output);
                 }
                 else
@@ -85,6 +85,7 @@ namespace Session_05
             return response;
         }
 
+
         private string FindLongestWord(string[] array)
         {
             int longest = array.Max(s => s.Length);
@@ -92,6 +93,7 @@ namespace Session_05
 
             return longestWord;
         }
+
 
         private string DecimalToBinary(ActionRequest req)
         {
@@ -116,6 +118,13 @@ namespace Session_05
 
         }
 
+        public static string ReverseStringRecursion(string str)
+        {
+            if (str.Length > 0)
+                return str[str.Length - 1] + ReverseStringRecursion(str.Substring(0, str.Length - 1));
+            else
+                return str;
+        }
         private string ReverseString(string name)
         {
             char[] nameArray = name.ToCharArray();

@@ -86,7 +86,8 @@ namespace Calculator
 
         private void btnEquals_Click(object sender, EventArgs e)
         {
-            this.txtResult.Text = Validator.Validate(this.txtResult.Text, '=');
+            string result = Validator.Validate(this.txtResult.Text, '=');
+            this.txtResult.Text = result.Substring(0, result.Length - 1);
         }
 
         private void btnSubtract_Click(object sender, EventArgs e)
@@ -116,10 +117,8 @@ namespace Calculator
 
         private void btnSqrt_Click(object sender, EventArgs e)
         {
-            if(!(Validator.LastIsSymbol(this.txtResult.Text)))
-            {
-                this.txtResult.Text += 0;
-            }
+            string result = Validator.Validate(this.txtResult.Text, '=');
+            this.txtResult.Text = Validator.Validate(result, '@');
         }
     }
 }

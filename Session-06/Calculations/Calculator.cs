@@ -18,15 +18,17 @@ namespace Calculations
             switch (oper)
             {
                 case '*':
-                    return entries[0] * entries[1];
+                    return new Calculations.Multiplication().Execute(entries[0], entries[1]);
                 case '/':
-                    return entries[0] / entries[1];
+                    return new Calculations.Division().Execute(entries[0], entries[1]);
                 case '+':
-                    return entries[0] + entries[1];
+                    return new Calculations.Addition().Execute(entries[0], entries[1]);
                 case '-':
-                    return entries[0] - entries[1];
+                    return new Calculations.Substraction().Execute(entries[0], entries[1]);
                 case '^':
-                    return (decimal) Math.Pow(Convert.ToDouble(entries[0]),Convert.ToDouble(entries[1]));
+                    return new Calculations.ToPower().Execute(entries[0], entries[1]);
+                case '@':
+                    return new Calculations.Sqrt().Execute(entries[0]);
                 default:
                     throw new NotImplementedException("The operator is not supported.");
             }

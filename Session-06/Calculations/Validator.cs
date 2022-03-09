@@ -15,14 +15,17 @@ namespace Calculations
 
         public string Validate(string expression, char c)
         {
+            if(c == '=')
+                return Validate(expression, FindSymbols(expression)[0]);
 
-            if (char.IsDigit(c) || !(NumberOfSymbols(expression) > 0))
+
+            if ((char.IsDigit(c) || !(NumberOfSymbols(expression) > 0)) && c != '@' )
                 return expression + c;
 
             if(!(LastIsSymbol(expression)))
             {
                 decimal[] entries = new Parser().ParseDecimals(expression);
-                decimal result = new Calculator().Execute(entries, c);
+                decimal result = new Calculator().Execute(entries, FindSymbols(expression)[0]);
                 return result.ToString() + c;
             }
 
@@ -80,6 +83,8 @@ namespace Calculations
                 } 
                     
             }
+            if (array.Count(c => c != null) == 0)
+                return new char[] { ' ' };
 
             return array;
         }

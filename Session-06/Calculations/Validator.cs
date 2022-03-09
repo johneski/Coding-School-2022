@@ -82,20 +82,20 @@ namespace Calculations
 
         public char[] FindSymbols(string expression)
         {
-            char[]? array = new char[expression.Length];
+            char[] array = new char[expression.Length];
             int index = 0;
 
             foreach(char c in expression)
             {
-                if (!(char.IsDigit(c)))
+                if (!(char.IsDigit(c)) && c != ',')
                 {
                     array[index] = c;
                     index++;
                 } 
                     
             }
-            if (array.Count(c => c != null) == 0)
-                return new char[] { ' ' };
+            if (array.Count(c => c != '\0') == 0)
+                return new char[] { '\0' };
 
             return array;
         }

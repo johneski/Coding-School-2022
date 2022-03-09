@@ -30,7 +30,7 @@ namespace Calculations
                 case '@':
                     return new Calculations.Sqrt().Execute(entries[0]);
                 default:
-                    throw new NotImplementedException("The operator is not supported.");
+                    return entries[0];
             }
 
 

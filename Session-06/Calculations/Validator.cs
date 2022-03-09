@@ -15,11 +15,22 @@ namespace Calculations
 
         public string Validate(string expression, char c)
         {
-            if(c == '=')
-                return Validate(expression, FindSymbols(expression)[0]);
+            if(c == '@')
+            {
+                decimal[] entries = new Parser().ParseDecimals(expression);
+                decimal result = new Calculator().Execute(entries, '@');
+                return result.ToString();
+            }
+
+            if (c == '=')
+            {
+                string result = Validate(expression, FindSymbols(expression)[0]);
+                return result.Substring(0, result.Length-1);
+            }
+                
 
 
-            if ((char.IsDigit(c) || !(NumberOfSymbols(expression) > 0)) && c != '@' )
+            if (char.IsDigit(c) || !(NumberOfSymbols(expression) > 0))
                 return expression + c;
 
             if(!(LastIsSymbol(expression)))

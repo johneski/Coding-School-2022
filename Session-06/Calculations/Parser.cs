@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Calculations
 {
-    internal class Parser
+    public class Parser
     {
         public Parser()
         {

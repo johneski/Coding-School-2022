@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Calculations
 {
-    internal class Sqrt
+    public class Sqrt
     {
         public Sqrt()
         {

@@ -86,8 +86,7 @@ namespace Calculator
 
         private void btnEquals_Click(object sender, EventArgs e)
         {
-            string result = Validator.Validate(this.txtResult.Text, '=');
-            this.txtResult.Text = result.Substring(0, result.Length - 1);
+            this.txtResult.Text = Validator.Validate(this.txtResult.Text, '=');
         }
 
         private void btnSubtract_Click(object sender, EventArgs e)

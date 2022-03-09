@@ -38,7 +38,7 @@
             this.btnNumber2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnNumber3 = new DevExpress.XtraEditors.SimpleButton();
             this.btnSeparator = new DevExpress.XtraEditors.SimpleButton();
-            this.btnPercent = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPower = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.btnClear = new DevExpress.XtraEditors.SimpleButton();
             this.btnNumber0 = new DevExpress.XtraEditors.SimpleButton();
@@ -151,14 +151,15 @@
             this.btnSeparator.Text = ",";
             this.btnSeparator.Click += new System.EventHandler(this.btnSeparator_Click);
             // 
-            // btnPercent
+            // btnPower
             // 
-            this.btnPercent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPercent.Location = new System.Drawing.Point(162, 147);
-            this.btnPercent.Name = "btnPercent";
-            this.btnPercent.Size = new System.Drawing.Size(63, 54);
-            this.btnPercent.TabIndex = 27;
-            this.btnPercent.Text = "x^n";
+            this.btnPower.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPower.Location = new System.Drawing.Point(162, 147);
+            this.btnPower.Name = "btnPower";
+            this.btnPower.Size = new System.Drawing.Size(63, 54);
+            this.btnPower.TabIndex = 27;
+            this.btnPower.Text = "x^n";
+            this.btnPower.Click += new System.EventHandler(this.btnPower_Click);
             // 
             // btnDelete
             // 
@@ -278,7 +279,7 @@
             this.Controls.Add(this.btnNumber0);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnPercent);
+            this.Controls.Add(this.btnPower);
             this.Controls.Add(this.btnSeparator);
             this.Controls.Add(this.btnNumber3);
             this.Controls.Add(this.btnNumber2);
@@ -307,7 +308,7 @@
         private DevExpress.XtraEditors.SimpleButton btnNumber2;
         private DevExpress.XtraEditors.SimpleButton btnNumber3;
         private DevExpress.XtraEditors.SimpleButton btnSeparator;
-        private DevExpress.XtraEditors.SimpleButton btnPercent;
+        private DevExpress.XtraEditors.SimpleButton btnPower;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraEditors.SimpleButton btnClear;
         private DevExpress.XtraEditors.SimpleButton btnNumber0;

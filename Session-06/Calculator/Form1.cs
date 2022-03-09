@@ -119,5 +119,10 @@ namespace Calculator
             string result = Validator.Validate(this.txtResult.Text, '=');
             this.txtResult.Text = Validator.Validate(result, '@');
         }
+
+        private void btnPower_Click(object sender, EventArgs e)
+        {
+            this.txtResult.Text = Validator.Validate(this.txtResult.Text, '^');
+        }
     }
 }

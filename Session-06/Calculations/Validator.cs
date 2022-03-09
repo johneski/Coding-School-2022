@@ -15,6 +15,9 @@ namespace Calculations
 
         public string Validate(string expression, char c)
         {
+            if (!(char.IsDigit(c)) && string.IsNullOrEmpty(expression))
+                return "";
+
             if(c == '@')
             {
                 decimal[] entries = new Parser().ParseDecimals(expression);

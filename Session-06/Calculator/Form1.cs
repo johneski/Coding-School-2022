@@ -56,7 +56,8 @@ namespace Calculator
 
         private void btnSeparator_Click(object sender, EventArgs e)
         {
-            this.txtResult.Text = Validator.ValidateEntry(this.txtResult.Text, ',');
+            
+            this.txtResult.Text = Validator.Validate(this.txtResult.Text, ',');
         }
 
         private void btnNumber6_Click(object sender, EventArgs e)

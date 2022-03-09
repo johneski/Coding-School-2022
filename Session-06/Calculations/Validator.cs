@@ -17,6 +17,14 @@ namespace Calculations
         {
             if (!(char.IsDigit(c)) && string.IsNullOrEmpty(expression))
                 return "";
+            
+            if (c == ',')
+            {
+                string[] values = new Calculations.Parser().SeparateValues(expression);
+                if (values[values.Length - 1].Contains(c)) return expression;
+                else return ValidateEntry(expression, c);
+            }
+
 
             if(c == '@')
             {

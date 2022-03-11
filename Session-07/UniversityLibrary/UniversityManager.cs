@@ -58,7 +58,7 @@ namespace University
             Data.Students.Remove(student);
         }
 
-        public Professor CreateProfessor(string name, int age, Rank rank)
+        public Professor CreateProfessor(string name, int age, string rank)
         {
             var profData = new ProfessorData(name, age, rank);
             var professor = new Professor(profData);
@@ -143,7 +143,7 @@ namespace University
             try
             {
                 string text = File.ReadAllText(_paths[((int) Paths.Professors)]);
-                Data.Professors = JsonSerializer.Deserialize<List<Professor>>(text);
+                Data.Professors = (List<Professor>) JsonSerializer.Deserialize<List<Professor>>(text);
             }
             catch (FileNotFoundException e) { }
                             
@@ -236,6 +236,10 @@ namespace University
             File.WriteAllText(_paths[((int)Paths.Schedule)], schedule);
         }
 
+        public void Delete(Professor professor)
+        {
+            Data.Professors.Remove(professor);
+        }
         
     }
 }

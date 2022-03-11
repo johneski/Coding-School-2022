@@ -113,6 +113,7 @@
             "full",
             "associate",
             "assistant"});
+            this.RankComboBox.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.RankComboBox.Size = new System.Drawing.Size(100, 20);
             this.RankComboBox.StyleController = this.TableLayout;
             this.RankComboBox.TabIndex = 5;
@@ -161,6 +162,7 @@
             this.btnSave.StyleController = this.TableLayout;
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
@@ -170,6 +172,7 @@
             this.btnDelete.StyleController = this.TableLayout;
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // txtAge
             // 
@@ -196,6 +199,7 @@
             this.ProfessorComboBox.Name = "ProfessorComboBox";
             this.ProfessorComboBox.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ProfessorComboBox.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ProfessorComboBox.Properties.EditValueChanged += new System.EventHandler(this.LoadCourseComboBox);
             this.ProfessorComboBox.Size = new System.Drawing.Size(200, 20);
             this.ProfessorComboBox.StyleController = this.TableLayout;
@@ -208,6 +212,7 @@
             this.StudentComboBox.Name = "StudentComboBox";
             this.StudentComboBox.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.StudentComboBox.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.StudentComboBox.Size = new System.Drawing.Size(200, 20);
             this.StudentComboBox.StyleController = this.TableLayout;
             this.StudentComboBox.TabIndex = 2;

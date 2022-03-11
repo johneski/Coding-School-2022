@@ -26,5 +26,10 @@ namespace University
             var exam = new Exam(course, datetime);
             Data.Exams.Add(exam);
         }
+
+        public string GetName()
+        {
+            return Data.Name;
+        }
     }
 }

@@ -60,5 +60,11 @@ namespace UniversityUI
 
             Program.university.LoadAll();
         }
+
+        private void editToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            StudentsForm form = new StudentsForm();
+            form.ShowDialog();
+        }
     }
 }

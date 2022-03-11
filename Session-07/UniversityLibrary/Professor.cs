@@ -34,6 +34,17 @@ namespace University
         {
             return Data.Name;
         }
+
+        public bool TeachesCourse(Course course)
+        {
+            foreach(Course c in Data.Courses)
+            {
+                if(c.Code == course.Code)
+                    return true;
+            }
+
+            return false;
+        }
         
     }
 }

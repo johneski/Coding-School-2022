@@ -16,14 +16,10 @@ namespace UniversityUI
 {
     public partial class XtraForm1 : DevExpress.XtraEditors.XtraForm
     {
-        public UniversityManager university;
-        public Exam exam { get; set; }
-        public Professor prof { get; set; }
+        
         public XtraForm1()
         {
-            InitializeComponent();
-
-            
+            InitializeComponent();           
         }
 
         private void schedulleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -55,13 +51,14 @@ namespace UniversityUI
             try
             {
                 string text = File.ReadAllText("university.json");
-                university = (UniversityManager)JsonSerializer.Deserialize(text, typeof(UniversityManager));
+                Program.university = (UniversityManager)JsonSerializer.Deserialize(text, typeof(UniversityManager));
             }
             catch (FileNotFoundException ex)
             {
-                university = new UniversityManager(string.Empty, 0);
+                Program.university = new UniversityManager(string.Empty, 0);
             }
-            
+
+            Program.university.LoadAll();
         }
     }
 }

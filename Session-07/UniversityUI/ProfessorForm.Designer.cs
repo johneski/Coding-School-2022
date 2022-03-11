@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.TableLayout = new DevExpress.XtraLayout.LayoutControl();
+            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.txtGrade = new DevExpress.XtraEditors.TextEdit();
             this.txtRegistrationNumber = new DevExpress.XtraEditors.TextEdit();
             this.txtID = new DevExpress.XtraEditors.TextEdit();
             this.txtAge = new DevExpress.XtraEditors.TextEdit();
@@ -46,17 +50,14 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.txtGrade = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.TableLayout)).BeginInit();
             this.TableLayout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGrade.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRegistrationNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAge.Properties)).BeginInit();
@@ -74,12 +75,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGrade.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             this.SuspendLayout();
             // 
             // TableLayout
@@ -103,6 +103,41 @@
             this.TableLayout.Size = new System.Drawing.Size(519, 399);
             this.TableLayout.TabIndex = 0;
             this.TableLayout.Text = "layoutControl1";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(351, 365);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(156, 22);
+            this.btnCancel.StyleController = this.TableLayout;
+            this.btnCancel.TabIndex = 11;
+            this.btnCancel.Text = "Cancel";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(178, 365);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(169, 22);
+            this.btnSave.StyleController = this.TableLayout;
+            this.btnSave.TabIndex = 10;
+            this.btnSave.Text = "Save";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(12, 365);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(162, 22);
+            this.btnDelete.StyleController = this.TableLayout;
+            this.btnDelete.TabIndex = 9;
+            this.btnDelete.Text = "Delete";
+            // 
+            // txtGrade
+            // 
+            this.txtGrade.Location = new System.Drawing.Point(102, 231);
+            this.txtGrade.Name = "txtGrade";
+            this.txtGrade.Size = new System.Drawing.Size(405, 20);
+            this.txtGrade.StyleController = this.TableLayout;
+            this.txtGrade.TabIndex = 8;
             // 
             // txtRegistrationNumber
             // 
@@ -141,7 +176,7 @@
             // 
             // ProfessorComboBox
             // 
-            this.ProfessorComboBox.Location = new System.Drawing.Point(102, 60);
+            this.ProfessorComboBox.Location = new System.Drawing.Point(102, 12);
             this.ProfessorComboBox.Name = "ProfessorComboBox";
             this.ProfessorComboBox.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -151,7 +186,7 @@
             // 
             // StudentComboBox
             // 
-            this.StudentComboBox.Location = new System.Drawing.Point(102, 36);
+            this.StudentComboBox.Location = new System.Drawing.Point(102, 60);
             this.StudentComboBox.Name = "StudentComboBox";
             this.StudentComboBox.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -161,7 +196,7 @@
             // 
             // CoursesComboBox
             // 
-            this.CoursesComboBox.Location = new System.Drawing.Point(102, 12);
+            this.CoursesComboBox.Location = new System.Drawing.Point(102, 36);
             this.CoursesComboBox.Name = "CoursesComboBox";
             this.CoursesComboBox.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -176,7 +211,6 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem2,
             this.layoutControlItem1,
-            this.layoutControlItem3,
             this.simpleSeparator1,
             this.layoutControlItem4,
             this.layoutControlItem5,
@@ -186,7 +220,8 @@
             this.layoutControlItem8,
             this.layoutControlItem10,
             this.layoutControlItem11,
-            this.layoutControlItem12});
+            this.layoutControlItem12,
+            this.layoutControlItem3});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(519, 399);
             this.Root.TextVisible = false;
@@ -194,7 +229,7 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.CoursesComboBox;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(499, 24);
             this.layoutControlItem2.Text = "Course";
@@ -203,7 +238,7 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.StudentComboBox;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(499, 24);
             this.layoutControlItem1.Text = "Student";
@@ -212,7 +247,7 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.ProfessorComboBox;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(499, 24);
             this.layoutControlItem3.Text = "Professor";
@@ -270,22 +305,6 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(499, 110);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // emptySpaceItem2
-            // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 96);
-            this.emptySpaceItem2.Name = "emptySpaceItem1";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(497, 277);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // txtGrade
-            // 
-            this.txtGrade.Location = new System.Drawing.Point(102, 231);
-            this.txtGrade.Name = "txtGrade";
-            this.txtGrade.Size = new System.Drawing.Size(405, 20);
-            this.txtGrade.StyleController = this.TableLayout;
-            this.txtGrade.TabIndex = 8;
-            // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.txtGrade;
@@ -294,15 +313,6 @@
             this.layoutControlItem8.Size = new System.Drawing.Size(499, 24);
             this.layoutControlItem8.Text = "Grade";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(78, 13);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(12, 365);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(162, 22);
-            this.btnDelete.StyleController = this.TableLayout;
-            this.btnDelete.TabIndex = 9;
-            this.btnDelete.Text = "Delete";
             // 
             // layoutControlItem10
             // 
@@ -313,15 +323,6 @@
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(178, 365);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(169, 22);
-            this.btnSave.StyleController = this.TableLayout;
-            this.btnSave.TabIndex = 10;
-            this.btnSave.Text = "Save";
-            // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.btnSave;
@@ -331,15 +332,6 @@
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(351, 365);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(156, 22);
-            this.btnCancel.StyleController = this.TableLayout;
-            this.btnCancel.TabIndex = 11;
-            this.btnCancel.Text = "Cancel";
-            // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.btnCancel;
@@ -348,6 +340,14 @@
             this.layoutControlItem12.Size = new System.Drawing.Size(160, 26);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 96);
+            this.emptySpaceItem2.Name = "emptySpaceItem1";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(497, 277);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // ProfessorForm
             // 
@@ -360,6 +360,7 @@
             this.Load += new System.EventHandler(this.UniversityForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TableLayout)).EndInit();
             this.TableLayout.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtGrade.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRegistrationNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAge.Properties)).EndInit();
@@ -377,12 +378,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGrade.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             this.ResumeLayout(false);
 
         }

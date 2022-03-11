@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace University
 {
-    internal class Schedule
+    public class Exam
     {
         public Guid ID { get; set; }
         public Guid CourseID { get; set; }
-        public Guid ProfessorID { get; set; }
-        public DateTime Callendar { get; set; }
+        public string CourseSubject { get; set; }
+        public DateTime Date { get; set; }
 
-        public Schedule(Guid course, Guid prof, DateTime callendar)
+        public Exam(Course course, DateTime datetime)
         {
             ID = Guid.NewGuid();
-            CourseID = course;
-            ProfessorID = prof;
-            Callendar = callendar;
+            CourseID = course.ID;
+            CourseSubject = course.Subject;
+            Date = datetime;
         }
     }
 }

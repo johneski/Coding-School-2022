@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace University
 {
-    internal class University
+    public class UniversityManager
     {
         public UniversityData Info { get; set; }
 
-        public University(string name, int yearsInService)
+        public UniversityManager(string name, int yearsInService)
         {
             Info = new UniversityData(name, yearsInService);
         }

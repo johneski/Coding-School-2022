@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace University
 {
-    internal class UniversityData : Institute
+    public class UniversityData : Institute
     {
         // TODO: Implement get/set methods
         public List<Course> Courses { get; set; }

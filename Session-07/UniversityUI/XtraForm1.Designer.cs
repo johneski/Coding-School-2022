@@ -186,6 +186,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "XtraForm1";
             this.Text = "XtraForm1";
+            this.Load += new System.EventHandler(this.XtraForm1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();

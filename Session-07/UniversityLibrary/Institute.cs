@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace University
 {
-    internal class Institute
+    public class Institute
     {
         public string Name { get => Name; set => Name = value; }
         public Guid ID { get; }

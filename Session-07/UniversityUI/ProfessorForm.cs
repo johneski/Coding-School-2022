@@ -20,8 +20,7 @@ namespace UniversityUI
 
         private void UniversityForm_Load(object sender, EventArgs e)
         {
-
-            
+                        
         }
     }
 }

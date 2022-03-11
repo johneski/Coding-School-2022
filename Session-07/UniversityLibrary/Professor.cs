@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace University
 {
-    internal class Professor
+    public class Professor
     {
         public ProfessorData Info { get; set; }
 

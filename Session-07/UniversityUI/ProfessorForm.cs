@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace UniversityUI
 {
-    public partial class UniversityForm : DevExpress.XtraEditors.XtraForm
+    public partial class ProfessorForm : DevExpress.XtraEditors.XtraForm
     {
-        public UniversityForm()
+        public ProfessorForm()
         {
             InitializeComponent();
         }

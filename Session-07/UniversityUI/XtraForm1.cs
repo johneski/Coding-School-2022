@@ -30,7 +30,12 @@ namespace UniversityUI
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UniversityForm form = new UniversityForm();
+           
+        }
+
+        private void editToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ProfessorForm form = new ProfessorForm();
             form.ShowDialog();
         }
     }

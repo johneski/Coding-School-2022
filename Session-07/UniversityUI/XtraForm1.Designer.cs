@@ -34,16 +34,16 @@
             this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.universityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.professorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.studentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.coursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gradesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.schedulleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.professorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.coursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gradesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.schedulleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -97,6 +97,13 @@
             this.universityToolStripMenuItem.Text = "University";
             this.universityToolStripMenuItem.Click += new System.EventHandler(this.universityToolStripMenuItem_Click);
             // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
             // professorToolStripMenuItem
             // 
             this.professorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -104,6 +111,13 @@
             this.professorToolStripMenuItem.Name = "professorToolStripMenuItem";
             this.professorToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.professorToolStripMenuItem.Text = "Professors";
+            // 
+            // editToolStripMenuItem1
+            // 
+            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem1.Text = "Edit";
+            this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
             // 
             // studentsToolStripMenuItem
             // 
@@ -113,6 +127,12 @@
             this.studentsToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.studentsToolStripMenuItem.Text = "Students";
             // 
+            // editToolStripMenuItem2
+            // 
+            this.editToolStripMenuItem2.Name = "editToolStripMenuItem2";
+            this.editToolStripMenuItem2.Size = new System.Drawing.Size(94, 22);
+            this.editToolStripMenuItem2.Text = "Edit";
+            // 
             // coursesToolStripMenuItem
             // 
             this.coursesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -121,6 +141,12 @@
             this.coursesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.coursesToolStripMenuItem.Text = "Courses";
             // 
+            // editToolStripMenuItem3
+            // 
+            this.editToolStripMenuItem3.Name = "editToolStripMenuItem3";
+            this.editToolStripMenuItem3.Size = new System.Drawing.Size(94, 22);
+            this.editToolStripMenuItem3.Text = "Edit";
+            // 
             // gradesToolStripMenuItem
             // 
             this.gradesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -128,6 +154,12 @@
             this.gradesToolStripMenuItem.Name = "gradesToolStripMenuItem";
             this.gradesToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.gradesToolStripMenuItem.Text = "Grades";
+            // 
+            // editToolStripMenuItem4
+            // 
+            this.editToolStripMenuItem4.Name = "editToolStripMenuItem4";
+            this.editToolStripMenuItem4.Size = new System.Drawing.Size(94, 22);
+            this.editToolStripMenuItem4.Text = "Edit";
             // 
             // schedulleToolStripMenuItem
             // 
@@ -138,41 +170,10 @@
             this.schedulleToolStripMenuItem.Text = "Schedule";
             this.schedulleToolStripMenuItem.Click += new System.EventHandler(this.schedulleToolStripMenuItem_Click);
             // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.editToolStripMenuItem.Text = "Edit";
-            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
-            // 
-            // editToolStripMenuItem1
-            // 
-            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.editToolStripMenuItem1.Text = "Edit";
-            // 
-            // editToolStripMenuItem2
-            // 
-            this.editToolStripMenuItem2.Name = "editToolStripMenuItem2";
-            this.editToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.editToolStripMenuItem2.Text = "Edit";
-            // 
-            // editToolStripMenuItem3
-            // 
-            this.editToolStripMenuItem3.Name = "editToolStripMenuItem3";
-            this.editToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
-            this.editToolStripMenuItem3.Text = "Edit";
-            // 
-            // editToolStripMenuItem4
-            // 
-            this.editToolStripMenuItem4.Name = "editToolStripMenuItem4";
-            this.editToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
-            this.editToolStripMenuItem4.Text = "Edit";
-            // 
             // editToolStripMenuItem5
             // 
             this.editToolStripMenuItem5.Name = "editToolStripMenuItem5";
-            this.editToolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem5.Size = new System.Drawing.Size(94, 22);
             this.editToolStripMenuItem5.Text = "Edit";
             // 
             // XtraForm1

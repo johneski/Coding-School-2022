@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace University
 {
+    [Serializable]
     public class Student
     {
         public StudentData Data { get; set; }

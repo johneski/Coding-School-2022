@@ -1,10 +1,11 @@
 ﻿namespace University
 {
+    [Serializable]
     public class ProfessorData : Person
     {
         public Rank ProfRank { get; set; }
-        
-        public override string Name { get => "Dr. " + Name; set => Name = value; }
+        private string _name;
+        public override string Name { get => "Dr. " + _name; set => _name = value; }
 
         public List<Course> Courses { get; set; }
 

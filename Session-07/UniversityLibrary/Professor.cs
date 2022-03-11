@@ -6,32 +6,33 @@ using System.Threading.Tasks;
 
 namespace University
 {
+    [Serializable]
     public class Professor
     {
-        public ProfessorData Info { get; set; }
+        public ProfessorData Data { get; set; }
 
         public Professor(ProfessorData data)
         {
-            Info = data;
+            Data = data;
         }
 
         
         public void Teach(Course course)
         {
-            Info.Courses.Add(course);
+            Data.Courses.Add(course);
         }
 
         public Grade SetGrade(Guid courseID, Guid studentID, int value)
         {
             var grade = new Grade(courseID, studentID, value);
-            Info.Grades.Add(grade);
+            Data.Grades.Add(grade);
 
             return grade;
         }
 
         public string GetName()
         {
-            return Info.Name;
+            return Data.Name;
         }
         
     }

@@ -8,7 +8,7 @@ namespace University
 {
     public class Institute
     {
-        public string Name { get => Name; set => Name = value; }
+        public string Name { get; set; }
         public Guid ID { get; }
         public int YearsInService { get;}
 

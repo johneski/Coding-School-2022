@@ -17,6 +17,8 @@ namespace UniversityUI
     public partial class XtraForm1 : DevExpress.XtraEditors.XtraForm
     {
         public UniversityManager university;
+        public Exam exam { get; set; }
+        public Professor prof { get; set; }
         public XtraForm1()
         {
             InitializeComponent();
@@ -48,6 +50,7 @@ namespace UniversityUI
 
         private void XtraForm1_Load(object sender, EventArgs e)
         {
+            
 
             try
             {
@@ -57,9 +60,8 @@ namespace UniversityUI
             catch (FileNotFoundException ex)
             {
                 university = new UniversityManager(string.Empty, 0);
-                
             }
-
+            
         }
     }
 }

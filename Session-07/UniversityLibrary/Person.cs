@@ -16,7 +16,7 @@ namespace University
         public Person(string name, int age)
         {
             ID = Guid.NewGuid();
-            Name = name;
+            //PName = "";
             Age = age;
         }
 

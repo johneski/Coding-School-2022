@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace University
 {
+    [Serializable]
     public class UniversityData : Institute
     {
-        // TODO: Implement get/set methods
+        
         public List<Course> Courses { get; set; }
         public List<Professor> Professors { get; set; }
         public List<Student> Students { get; set; }

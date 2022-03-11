@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace University
 {
-    internal class Grade
+    public class Grade
     {
         public Guid ID { get; }
         public Guid CourseID { get;  }

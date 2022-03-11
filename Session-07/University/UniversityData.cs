@@ -9,18 +9,18 @@ namespace University
     internal class UniversityData : Institute
     {
         // TODO: Implement get/set methods
-        public List<Course> Courses { get;  }
-        public List<ProfessorData> Professors { get;  }
-        public List<StudentData> Students { get; }
-        public List<Grade> Grades { get; }
+        public List<Course> Courses { get; set; }
+        public List<Professor> Professors { get; set; }
+        public List<Student> Students { get; set; }
+        public List<Grade> Grades { get; set; }
         public List<Schedule> ScheduledCourses { get; set; }
 
 
         public UniversityData(string name, int yearsInService) : base(name, yearsInService)
         {
             Courses = new List<Course>();
-            Professors = new List<ProfessorData>();
-            Students = new List<StudentData>();
+            Professors = new List<Professor>();
+            Students = new List<Student>();
             Grades = new List<Grade>();
             ScheduledCourses = new List<Schedule>();
         }

@@ -39,6 +39,12 @@
             this.coursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gradesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.schedulleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
@@ -84,6 +90,8 @@
             // 
             // universityToolStripMenuItem
             // 
+            this.universityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem});
             this.universityToolStripMenuItem.Name = "universityToolStripMenuItem";
             this.universityToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.universityToolStripMenuItem.Text = "University";
@@ -91,34 +99,81 @@
             // 
             // professorToolStripMenuItem
             // 
+            this.professorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem1});
             this.professorToolStripMenuItem.Name = "professorToolStripMenuItem";
             this.professorToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.professorToolStripMenuItem.Text = "Professors";
             // 
             // studentsToolStripMenuItem
             // 
+            this.studentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem2});
             this.studentsToolStripMenuItem.Name = "studentsToolStripMenuItem";
             this.studentsToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.studentsToolStripMenuItem.Text = "Students";
             // 
             // coursesToolStripMenuItem
             // 
+            this.coursesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem3});
             this.coursesToolStripMenuItem.Name = "coursesToolStripMenuItem";
             this.coursesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.coursesToolStripMenuItem.Text = "Courses";
             // 
             // gradesToolStripMenuItem
             // 
+            this.gradesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem4});
             this.gradesToolStripMenuItem.Name = "gradesToolStripMenuItem";
             this.gradesToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.gradesToolStripMenuItem.Text = "Grades";
             // 
             // schedulleToolStripMenuItem
             // 
+            this.schedulleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem5});
             this.schedulleToolStripMenuItem.Name = "schedulleToolStripMenuItem";
             this.schedulleToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.schedulleToolStripMenuItem.Text = "Schedule";
             this.schedulleToolStripMenuItem.Click += new System.EventHandler(this.schedulleToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem1
+            // 
+            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem1.Text = "Edit";
+            // 
+            // editToolStripMenuItem2
+            // 
+            this.editToolStripMenuItem2.Name = "editToolStripMenuItem2";
+            this.editToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem2.Text = "Edit";
+            // 
+            // editToolStripMenuItem3
+            // 
+            this.editToolStripMenuItem3.Name = "editToolStripMenuItem3";
+            this.editToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem3.Text = "Edit";
+            // 
+            // editToolStripMenuItem4
+            // 
+            this.editToolStripMenuItem4.Name = "editToolStripMenuItem4";
+            this.editToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem4.Text = "Edit";
+            // 
+            // editToolStripMenuItem5
+            // 
+            this.editToolStripMenuItem5.Name = "editToolStripMenuItem5";
+            this.editToolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem5.Text = "Edit";
             // 
             // XtraForm1
             // 
@@ -152,5 +207,11 @@
         private ToolStripMenuItem coursesToolStripMenuItem;
         private ToolStripMenuItem gradesToolStripMenuItem;
         private ToolStripMenuItem schedulleToolStripMenuItem;
+        private ToolStripMenuItem editToolStripMenuItem;
+        private ToolStripMenuItem editToolStripMenuItem1;
+        private ToolStripMenuItem editToolStripMenuItem2;
+        private ToolStripMenuItem editToolStripMenuItem3;
+        private ToolStripMenuItem editToolStripMenuItem4;
+        private ToolStripMenuItem editToolStripMenuItem5;
     }
 }

@@ -9,7 +9,7 @@ namespace University
     [Serializable]
     public class Course
     {
-        public Guid ID { get; set; }
+        public Guid? ID { get; set; }
         public string Code { get; set; }
         public string Subject { get; set; }
 

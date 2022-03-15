@@ -1,6 +1,6 @@
 ﻿namespace UniversityUI
 {
-    partial class XtraForm1
+    partial class HomeF
     {
         /// <summary>
         /// Required designer variable.

@@ -7,29 +7,33 @@ using System.Threading.Tasks;
 namespace University
 {
     [Serializable]
-    public class Student
+    public class Student : Person
     {
-        public StudentData Data { get; set; }
+        
+        public int RegistrationNumber { get; set; }
 
-        public Student(StudentData data)
+        public List<Exam> Exams { get; set; }
+
+
+        public Student(string name, int age, int regNumber) : base(name, age)
         {
-            Data = data;
-        }
+            RegistrationNumber = regNumber;
+        }        
 
         public void Attend(Course course, DateTime datetime)
         {
-            Data.Courses.Add(course);
+            Courses.Add(course);
         }
 
         public void WriteExam(Course course, DateTime datetime)
         {
             var exam = new Exam(course, datetime);
-            Data.Exams.Add(exam);
+            Exams.Add(exam);
         }
 
         public string GetName()
         {
-            return Data.Name;
+            return Name;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace University
 {
     public class Person
     {
-        public List<Course>? Courses { get; set; }
+        public List<Course>? Courses { get; set; } = new List<Course>();
         public Guid ID { get; }
         public int Age { get; }
         public virtual string Name { get; set; }
@@ -16,7 +16,7 @@ namespace University
         public Person(string name, int age)
         {
             ID = Guid.NewGuid();
-            //PName = "";
+            Name = name;
             Age = age;
         }
 

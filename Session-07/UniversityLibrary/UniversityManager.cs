@@ -7,7 +7,7 @@ using System.Text.Json;
 
 namespace University
 {
-    public class UniversityManager
+    public class UniversityManager : Institute
     {
         private enum Paths
         {
@@ -26,28 +26,37 @@ namespace University
             "schedule.json"
         };
 
-        public UniversityData Data { get; set; }
+        public List<Course> Courses { get; set; }
+        public List<Professor> Professors { get; set; }
+        public List<Student> Students { get; set; }
+        public List<Grade> Grades { get; set; }
+        public List<Schedule> ScheduledCourses { get; set; }
 
-        public UniversityManager(string name, int yearsInService)
+
+        public UniversityManager(string name, int yearsInService) : base(name, yearsInService)
         {
-            Data = new UniversityData(name, yearsInService);
+            Courses = new List<Course>();
+            Professors = new List<Professor>();
+            Students = new List<Student>();
+            Grades = new List<Grade>();
+            ScheduledCourses = new List<Schedule>();
         }
 
         public string GetName()
         {
-            return Data.Name;
+            return Name;
         }
 
         public void SetName(string name)
         {
-            Data.Name = name;
+            Name = name;
         }
 
         public Student CreateStudent(string name, int age, int registrationNumber)
         {
-            var studentData = new StudentData(name, age, registrationNumber);
-            var student = new Student(studentData);
-            Data.Students.Add(student);
+            
+            var student = new Student(name, age, registrationNumber);
+            Students.Add(student);
 
             return student;
 
@@ -55,78 +64,78 @@ namespace University
 
         public void DeleteStudent(Student student)
         {
-            Data.Students.Remove(student);
+            Students.Remove(student);
         }
 
         public Professor CreateProfessor(string name, int age, string rank)
         {
-            var profData = new ProfessorData(name, age, rank);
-            var professor = new Professor(profData);
-            Data.Professors.Add(professor);
+            
+            var professor = new Professor(name, age, rank);
+            Professors.Add(professor);
 
             return professor;
         }
 
         public void DeleteProfessor(Professor prof)
         {
-            Data.Professors.Remove(prof);
+            Professors.Remove(prof);
         }
 
         public Course CreateCourse(string code, string subject)
         {
             var course = new Course(code, subject);
-            Data.Courses.Add(course);
+            Courses.Add(course);
 
             return course;
         }
 
         public List<Course> GetCourses()
         {
-            return Data.Courses;
+            return Courses;
         }
 
         public void DeleteCourse(Course course)
         {
-            Data.Courses.Remove(course);
+            Courses.Remove(course);
         }
 
         //TODO: check if professor teaches the course
         public void SetSchedule(Guid courseID, Guid profID, DateTime datetime)
         {
             var schedule = new Schedule(courseID, profID, datetime);
-            Data.ScheduledCourses.Add(schedule);
+            ScheduledCourses.Add(schedule);
         }
 
         public List<Schedule> GetSchedule()
         {
-            return Data.ScheduledCourses;
+            return ScheduledCourses;
         }
 
         public void DeleteSchedule(Schedule schedule)
         {
-            Data.ScheduledCourses.Remove(schedule);
+            ScheduledCourses.Remove(schedule);
         }
 
         public List<Student> GetStudents()
         {
-            return Data.Students;
+            return Students;
         }
 
         public List<Grade> GetGrades()
         {
-            Data.Grades.Clear();
+            Grades.Clear();
 
-            foreach (Professor prof in Data.Professors)
+            foreach (Professor prof in Professors)
             {
-                    prof.Data.Grades.ForEach(g => Data.Grades.Add(g));
+                    prof.Grades.ForEach(g => Grades.Add(g));
             }
 
-            return Data.Grades;
+            return Grades;
         }
 
         public List<Professor> GetProfessors()
         {
-            return Data.Professors;
+            return Professors;
         }
 
         public void LoadAll()
@@ -143,7 +152,7 @@ namespace University
             try
             {
                 string text = File.ReadAllText(_paths[((int) Paths.Professors)]);
-                Data.Professors = (List<Professor>) JsonSerializer.Deserialize<List<Professor>>(text);
+                Professors = (List<Professor>) JsonSerializer.Deserialize<List<Professor>>(text);
             }
             catch (FileNotFoundException e) { }
                             
@@ -155,7 +164,7 @@ namespace University
             try
             {
                 string text = File.ReadAllText(_paths[((int)Paths.Students)]);
-                Data.Students = JsonSerializer.Deserialize<List<Student>>(text);
+                Students = JsonSerializer.Deserialize<List<Student>>(text);
             }
             catch (FileNotFoundException e) { }
         }
@@ -166,7 +175,7 @@ namespace University
             try
             {
                 string text = File.ReadAllText(_paths[((int)Paths.Courses)]);
-                Data.Courses = JsonSerializer.Deserialize<List<Course>>(text);
+                Courses = JsonSerializer.Deserialize<List<Course>>(text);
             }
             catch (FileNotFoundException e) { }
         }
@@ -177,7 +186,7 @@ namespace University
             try
             {
                 string text = File.ReadAllText(_paths[((int)Paths.Grades)]);
-                Data.Grades = JsonSerializer.Deserialize<List<Grade>>(text);
+                Grades = JsonSerializer.Deserialize<List<Grade>>(text);
             }
             catch (FileNotFoundException e) { }
         }
@@ -188,7 +197,7 @@ namespace University
             try
             {
                 string text = File.ReadAllText(_paths[((int)Paths.Schedule)]);
-                Data.ScheduledCourses = JsonSerializer.Deserialize<List<Schedule>>(text);
+                ScheduledCourses = JsonSerializer.Deserialize<List<Schedule>>(text);
             }
             catch (FileNotFoundException e) { }
         }
@@ -238,7 +247,7 @@ namespace University
 
         public void Delete(Professor professor)
         {
-            Data.Professors.Remove(professor);
+            Professors.Remove(professor);
         }
         
     }

@@ -14,10 +14,10 @@ using University;
 
 namespace UniversityUI
 {
-    public partial class XtraForm1 : DevExpress.XtraEditors.XtraForm
+    public partial class HomeF : DevExpress.XtraEditors.XtraForm
     {
         
-        public XtraForm1()
+        public HomeF()
         {
             InitializeComponent();           
         }
@@ -40,7 +40,7 @@ namespace UniversityUI
         private void editToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
-            ProfessorForm form = new ProfessorForm();
+            var form = new ProfessorForm();
             form.ShowDialog();
         }
 
@@ -63,7 +63,7 @@ namespace UniversityUI
 
         private void editToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            StudentsForm form = new StudentsForm();
+            var form = new StudentsForm();
             form.ShowDialog();
         }
     }

@@ -7,37 +7,41 @@ using System.Threading.Tasks;
 namespace University
 {
     [Serializable]
-    public class Professor
+    public class Professor : Person
     {
-        public ProfessorData Data { get; set; }
+        public string ProfRank { get; set; }
+        public override string Name { get => "Dr. " + base.Name; set => base.Name = value; }
 
-        public Professor(ProfessorData data)
+        public List<Grade> Grades { get; set; }
+
+
+        public Professor(string name, int age, string profRank) : base(name, age)
         {
-            Data = data;
+            ProfRank = profRank;
         }
 
-        
+
         public void Teach(Course course)
         {
-            Data.Courses.Add(course);
+            Courses.Add(course);
         }
 
         public Grade SetGrade(Guid courseID, Guid studentID, int value)
         {
             var grade = new Grade(courseID, studentID, value);
-            Data.Grades.Add(grade);
+            Grades.Add(grade);
 
             return grade;
         }
 
         public string GetName()
         {
-            return Data.Name;
+            return Name;
         }
 
         public bool TeachesCourse(Course course)
         {
-            foreach(Course c in Data.Courses)
+            foreach(Course c in Courses)
             {
                 if(c.Code == course.Code)
                     return true;

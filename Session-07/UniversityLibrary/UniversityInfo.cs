@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace University
 {
     [Serializable]
-    public class UniversityData : Institute
+    public class UniversityInfo : Institute
     {
         
         public List<Course> Courses { get; set; }
@@ -17,7 +17,7 @@ namespace University
         public List<Schedule> ScheduledCourses { get; set; }
 
 
-        public UniversityData(string name, int yearsInService) : base(name, yearsInService)
+        public UniversityInfo(string name, int yearsInService) : base(name, yearsInService)
         {
             Courses = new List<Course>();
             Professors = new List<Professor>();

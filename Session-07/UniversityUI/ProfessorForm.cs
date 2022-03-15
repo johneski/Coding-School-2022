@@ -24,64 +24,60 @@ namespace UniversityUI
         private void UniversityForm_Load(object sender, EventArgs e)
         {
             _professorList = Program.university.GetProfessors();
-            foreach (Professor prof in _professorList) 
-                this.ProfessorComboBox.Properties.Items.Add(prof.GetName());
+            
+
+            _professorList.Add(new Professor("Kostas", 30, "full"));
+            _professorList.Add(new Professor("Nikos", 28, "full"));
+            _professorList.Add(new Professor("Giorgos", 30, "full"));
+            _professorList.Add(new Professor("John", 32, "associate"));
+            _professorList.Add(new Professor("Dimitris", 22, "full"));
+
+            _professorList[1].Courses = new List<Course>();
+           
+            _professorList[1].Courses.Add(new Course("134", "Physics"));
+            _professorList[1].Courses.Add(new Course("134", "Physics"));
+            _professorList[1].Courses.Add(new Course("134", "Physics"));
+            _professorList[1].Courses.Add(new Course("134", "Physics"));
+            
+            BindingSource bsCourses = new BindingSource(_professorList, "Courses");
+            cmbProfessor.DataSource = _professorList;
+            cmbProfessor.DisplayMember = "Name";
+            txtAge.DataBindings.Add(new Binding("Editvalue", _professorList, "Age", true));
+            RankComboBox.DataBindings.Add("Editvalue", _professorList, "ProfRank", true);
+
+            grdCourses.DataSource = bsCourses;
+
+            grdCourses.UseEmbeddedNavigator = true;
+            gridView1.Columns[0].Visible = false;            
             
         }
 
-        private void LoadCourseComboBox(object sender, EventArgs e)
-        {
-            try
-            {
-                _currentProfessor = _professorList[this.ProfessorComboBox.SelectedIndex];
-                int index = 0;
-                foreach (Course course in Program.university.GetCourses())
-                {
-                    if (_currentProfessor.TeachesCourse(course))
-                    {
-                        this.CourseListBox.SetItemValue(course, index);
-                        index++;
-                    }
-
-                }
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-
-            }
-            
-                
-        }
 
         private void btnNewProfessor_Click(object sender, EventArgs e)
         {
             
-            this.ProfessorComboBox.Properties.Items.Add("new Professor");
-            this.ProfessorComboBox.EditValue = "new Professor";
+            
             ClearForm();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             
-            string name = this.txtName.Text;
-            int age =  Convert.ToInt32(this.txtAge.Text);
-            string rank = (string) this.RankComboBox.EditValue;
-            Program.university.CreateProfessor(name, age, rank);
-            Program.university.SaveProfessors();
+            
+            
 
             
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Program.university.Delete(_currentProfessor);
-            this.ProfessorComboBox.Properties.Items.Remove(_currentProfessor.GetName());
-            int index = this.ProfessorComboBox.SelectedIndex;
-            if (!(index < 0))
-                _currentProfessor = _professorList[index];
-            else
-                this.ProfessorComboBox.Text = string.Empty;
+            //Program.university.Delete(_currentProfessor);
+            //this.ProfessorComboBox.Properties.Items.Remove(_currentProfessor.GetName());
+            //int index = this.ProfessorComboBox.SelectedIndex;
+            //if (!(index < 0))
+            //    _currentProfessor = _professorList[index];
+            //else
+            //    this.ProfessorComboBox.Text = string.Empty;
 
             ClearForm();
 
@@ -89,11 +85,19 @@ namespace UniversityUI
 
         private void ClearForm()
         {
-            this.StudentComboBox.Properties.Items.Clear();
-            this.StudentComboBox.EditValue = null;
-            this.txtName.Text = string.Empty;
+            _professorList.Clear();
             this.txtAge.Text = string.Empty;
-            this.CourseListBox.Items.Clear();
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TableLayout_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

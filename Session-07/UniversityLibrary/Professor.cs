@@ -10,12 +10,12 @@ namespace University
     public class Professor : Person
     {
         public string ProfRank { get; set; }
-        public override string Name { get => "Dr. " + base.Name; set => base.Name = value; }
+        public override string Fullname { get => $"Dr. {Name} {Surname}"; }
 
-        public List<Grade> Grades { get; set; }
+        public List<Grade> Grades { get; set; } = new List<Grade>();
 
 
-        public Professor(string name, int age, string profRank) : base(name, age)
+        public Professor(string name, string surname, int age, string profRank) : base(name, surname, age)
         {
             ProfRank = profRank;
         }

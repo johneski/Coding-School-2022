@@ -12,10 +12,10 @@ namespace University
         
         public int RegistrationNumber { get; set; }
 
-        public List<Exam> Exams { get; set; }
+        public List<Exam> Exams { get; set; } = new List<Exam>();
 
 
-        public Student(string name, int age, int regNumber) : base(name, age)
+        public Student(string name, string surname, int age, int regNumber) : base(name,surname, age)
         {
             RegistrationNumber = regNumber;
         }        

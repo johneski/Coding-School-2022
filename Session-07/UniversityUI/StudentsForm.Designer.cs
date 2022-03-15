@@ -29,64 +29,59 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.txtGrade = new DevExpress.XtraEditors.TextEdit();
+            this.lbCourses = new DevExpress.XtraEditors.LabelControl();
+            this.grdCourses = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btnSaveStudent = new DevExpress.XtraEditors.SimpleButton();
             this.btnDeleteStudent = new DevExpress.XtraEditors.SimpleButton();
             this.btnNewStudent = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.txtRegNumber = new DevExpress.XtraEditors.TextEdit();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.CoursesComboBox = new DevExpress.XtraEditors.ComboBoxEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.Information = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.txtAge = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtName = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.StudentComboBox = new DevExpress.XtraLayout.LayoutControlItem();
+            this.cmbStudents = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGrade.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCourses)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRegNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CoursesComboBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Information)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAge)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StudentComboBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbStudents)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.comboBoxEdit1);
-            this.layoutControl1.Controls.Add(this.txtGrade);
+            this.layoutControl1.Controls.Add(this.lbCourses);
+            this.layoutControl1.Controls.Add(this.grdCourses);
+            this.layoutControl1.Controls.Add(this.comboBox1);
             this.layoutControl1.Controls.Add(this.btnClose);
             this.layoutControl1.Controls.Add(this.btnSaveStudent);
             this.layoutControl1.Controls.Add(this.btnDeleteStudent);
             this.layoutControl1.Controls.Add(this.btnNewStudent);
-            this.layoutControl1.Controls.Add(this.textEdit3);
+            this.layoutControl1.Controls.Add(this.txtRegNumber);
             this.layoutControl1.Controls.Add(this.textEdit2);
-            this.layoutControl1.Controls.Add(this.textEdit1);
-            this.layoutControl1.Controls.Add(this.CoursesComboBox);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -95,25 +90,37 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // comboBoxEdit1
+            // lbCourses
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(63, 12);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit1.Size = new System.Drawing.Size(416, 20);
-            this.comboBoxEdit1.StyleController = this.layoutControl1;
-            this.comboBoxEdit1.TabIndex = 11;
+            this.lbCourses.Location = new System.Drawing.Point(24, 118);
+            this.lbCourses.Name = "lbCourses";
+            this.lbCourses.Size = new System.Drawing.Size(39, 13);
+            this.lbCourses.StyleController = this.layoutControl1;
+            this.lbCourses.TabIndex = 13;
+            this.lbCourses.Text = "Courses";
             // 
-            // txtGrade
+            // grdCourses
             // 
-            this.txtGrade.Location = new System.Drawing.Point(75, 165);
-            this.txtGrade.MaximumSize = new System.Drawing.Size(50, 0);
-            this.txtGrade.Name = "txtGrade";
-            this.txtGrade.Size = new System.Drawing.Size(50, 20);
-            this.txtGrade.StyleController = this.layoutControl1;
-            this.txtGrade.TabIndex = 6;
+            this.grdCourses.Location = new System.Drawing.Point(24, 135);
+            this.grdCourses.MainView = this.gridView1;
+            this.grdCourses.Name = "grdCourses";
+            this.grdCourses.Size = new System.Drawing.Size(443, 185);
+            this.grdCourses.TabIndex = 12;
+            this.grdCourses.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.grdCourses;
+            this.gridView1.Name = "gridView1";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(67, 12);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(412, 21);
+            this.comboBox1.TabIndex = 11;
             // 
             // btnClose
             // 
@@ -151,44 +158,23 @@
             this.btnNewStudent.TabIndex = 7;
             this.btnNewStudent.Text = "New";
             // 
-            // textEdit3
+            // txtRegNumber
             // 
-            this.textEdit3.Location = new System.Drawing.Point(75, 141);
-            this.textEdit3.MaximumSize = new System.Drawing.Size(100, 0);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(100, 20);
-            this.textEdit3.StyleController = this.layoutControl1;
-            this.textEdit3.TabIndex = 5;
+            this.txtRegNumber.Location = new System.Drawing.Point(79, 94);
+            this.txtRegNumber.MaximumSize = new System.Drawing.Size(100, 0);
+            this.txtRegNumber.Name = "txtRegNumber";
+            this.txtRegNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtRegNumber.StyleController = this.layoutControl1;
+            this.txtRegNumber.TabIndex = 5;
             // 
             // textEdit2
             // 
-            this.textEdit2.Location = new System.Drawing.Point(75, 117);
+            this.textEdit2.Location = new System.Drawing.Point(79, 70);
             this.textEdit2.MaximumSize = new System.Drawing.Size(50, 0);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Size = new System.Drawing.Size(50, 20);
             this.textEdit2.StyleController = this.layoutControl1;
             this.textEdit2.TabIndex = 4;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(75, 93);
-            this.textEdit1.MaximumSize = new System.Drawing.Size(150, 0);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(150, 20);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 3;
-            // 
-            // CoursesComboBox
-            // 
-            this.CoursesComboBox.Location = new System.Drawing.Point(75, 69);
-            this.CoursesComboBox.MaximumSize = new System.Drawing.Size(100, 0);
-            this.CoursesComboBox.Name = "CoursesComboBox";
-            this.CoursesComboBox.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.CoursesComboBox.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.CoursesComboBox.Size = new System.Drawing.Size(100, 20);
-            this.CoursesComboBox.StyleController = this.layoutControl1;
-            this.CoursesComboBox.TabIndex = 2;
             // 
             // Root
             // 
@@ -200,7 +186,7 @@
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem7,
-            this.StudentComboBox});
+            this.cmbStudents});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(491, 380);
             this.Root.TextVisible = false;
@@ -211,65 +197,55 @@
             this.emptySpaceItem1,
             this.layoutControlItem3,
             this.txtAge,
-            this.txtName,
-            this.layoutControlItem2,
-            this.layoutControlItem8});
-            this.Information.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem1,
+            this.layoutControlItem2});
+            this.Information.Location = new System.Drawing.Point(0, 25);
             this.Information.Name = "Information";
-            this.Information.Size = new System.Drawing.Size(471, 310);
+            this.Information.Size = new System.Drawing.Size(471, 309);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 120);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 254);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(447, 145);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(447, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.textEdit3;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem3.Control = this.txtRegNumber;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(447, 24);
-            this.layoutControlItem3.Text = "ID";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(39, 13);
+            this.layoutControlItem3.Text = "Reg. No";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(43, 13);
             // 
             // txtAge
             // 
             this.txtAge.Control = this.textEdit2;
-            this.txtAge.Location = new System.Drawing.Point(0, 48);
+            this.txtAge.Location = new System.Drawing.Point(0, 0);
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(447, 24);
             this.txtAge.Text = "Age";
-            this.txtAge.TextSize = new System.Drawing.Size(39, 13);
+            this.txtAge.TextSize = new System.Drawing.Size(43, 13);
             // 
-            // txtName
+            // layoutControlItem1
             // 
-            this.txtName.Control = this.textEdit1;
-            this.txtName.Location = new System.Drawing.Point(0, 24);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(447, 24);
-            this.txtName.Text = "Name";
-            this.txtName.TextSize = new System.Drawing.Size(39, 13);
+            this.layoutControlItem1.Control = this.grdCourses;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 65);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(447, 189);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.CoursesComboBox;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Control = this.lbCourses;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(447, 24);
-            this.layoutControlItem2.Text = "Courses";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(39, 13);
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.txtGrade;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 96);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(447, 24);
-            this.layoutControlItem8.Text = "Grade";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(39, 13);
+            this.layoutControlItem2.Size = new System.Drawing.Size(447, 17);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem6
             // 
@@ -307,14 +283,14 @@
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
-            // StudentComboBox
+            // cmbStudents
             // 
-            this.StudentComboBox.Control = this.comboBoxEdit1;
-            this.StudentComboBox.Location = new System.Drawing.Point(0, 0);
-            this.StudentComboBox.Name = "StudentComboBox";
-            this.StudentComboBox.Size = new System.Drawing.Size(471, 24);
-            this.StudentComboBox.Text = "Student";
-            this.StudentComboBox.TextSize = new System.Drawing.Size(39, 13);
+            this.cmbStudents.Control = this.comboBox1;
+            this.cmbStudents.Location = new System.Drawing.Point(0, 0);
+            this.cmbStudents.Name = "cmbStudents";
+            this.cmbStudents.Size = new System.Drawing.Size(471, 25);
+            this.cmbStudents.Text = "Students";
+            this.cmbStudents.TextSize = new System.Drawing.Size(43, 13);
             // 
             // StudentsForm
             // 
@@ -324,27 +300,25 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "StudentsForm";
             this.Text = "StudentsForm";
+            this.Load += new System.EventHandler(this.StudentsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGrade.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCourses)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRegNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CoursesComboBox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Information)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAge)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StudentComboBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbStudents)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -352,28 +326,27 @@
         #endregion
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit txtRegNumber;
         private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.ComboBoxEdit CoursesComboBox;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlGroup Information;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem txtAge;
-        private DevExpress.XtraLayout.LayoutControlItem txtName;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraEditors.TextEdit txtGrade;
         private DevExpress.XtraEditors.SimpleButton btnClose;
         private DevExpress.XtraEditors.SimpleButton btnSaveStudent;
         private DevExpress.XtraEditors.SimpleButton btnDeleteStudent;
         private DevExpress.XtraEditors.SimpleButton btnNewStudent;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
-        private DevExpress.XtraLayout.LayoutControlItem StudentComboBox;
+        private ComboBox comboBox1;
+        private DevExpress.XtraLayout.LayoutControlItem cmbStudents;
+        private DevExpress.XtraEditors.LabelControl lbCourses;
+        private DevExpress.XtraGrid.GridControl grdCourses;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
     }
 }

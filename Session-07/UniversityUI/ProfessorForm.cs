@@ -24,26 +24,12 @@ namespace UniversityUI
         private void UniversityForm_Load(object sender, EventArgs e)
         {
             _professorList = Program.university.GetProfessors();
-            
-
-            _professorList.Add(new Professor("Kostas", 30, "full"));
-            _professorList.Add(new Professor("Nikos", 28, "full"));
-            _professorList.Add(new Professor("Giorgos", 30, "full"));
-            _professorList.Add(new Professor("John", 32, "associate"));
-            _professorList.Add(new Professor("Dimitris", 22, "full"));
-
-            _professorList[1].Courses = new List<Course>();
-           
-            _professorList[1].Courses.Add(new Course("134", "Physics"));
-            _professorList[1].Courses.Add(new Course("134", "Physics"));
-            _professorList[1].Courses.Add(new Course("134", "Physics"));
-            _professorList[1].Courses.Add(new Course("134", "Physics"));
-            
+                        
             BindingSource bsCourses = new BindingSource(_professorList, "Courses");
             cmbProfessor.DataSource = _professorList;
             cmbProfessor.DisplayMember = "Name";
             txtAge.DataBindings.Add(new Binding("Editvalue", _professorList, "Age", true));
-            RankComboBox.DataBindings.Add("Editvalue", _professorList, "ProfRank", true);
+            RankComboBox.DataBindings.Add(new Binding("Editvalue", _professorList, "ProfRank", true));
 
             grdCourses.DataSource = bsCourses;
 

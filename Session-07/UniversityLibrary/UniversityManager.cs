@@ -52,10 +52,10 @@ namespace University
             Name = name;
         }
 
-        public Student CreateStudent(string name, int age, int registrationNumber)
+        public Student CreateStudent(string name, string surname,  int age, int registrationNumber)
         {
             
-            var student = new Student(name, age, registrationNumber);
+            var student = new Student(name, surname, age, registrationNumber);
             Students.Add(student);
 
             return student;
@@ -67,10 +67,10 @@ namespace University
             Students.Remove(student);
         }
 
-        public Professor CreateProfessor(string name, int age, string rank)
+        public Professor CreateProfessor(string name, string surname, int age, string rank)
         {
             
-            var professor = new Professor(name, age, rank);
+            var professor = new Professor(name, surname, age, rank);
             Professors.Add(professor);
 
             return professor;

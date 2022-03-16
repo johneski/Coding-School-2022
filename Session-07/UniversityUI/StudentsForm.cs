@@ -31,16 +31,17 @@ namespace UniversityUI
             _students = Program.university.GetStudents();
 
             populateStudents();
+            BindingSource bsStudents = new BindingSource(_students, null);
+            BindingSource bsCourses = new BindingSource(bsStudents, "Courses");
 
-            comboBox1.DataSource = _students;
+            comboBox1.DataSource = bsStudents;
             comboBox1.DisplayMember = "Fullname";
 
-            textEdit2.DataBindings.Add(new Binding("EditValue", _students, "Age", true));
-            txtRegNumber.DataBindings.Add(new Binding("EditValue", _students, "RegistrationNumber", true));
+            textEdit2.DataBindings.Add(new Binding("EditValue", bsStudents, "Age", true));
+            txtRegNumber.DataBindings.Add(new Binding("EditValue", bsStudents, "RegistrationNumber", true));
 
-            BindingSource bsCourses = new BindingSource(_students, "Courses");
+            
             grdCourses.DataSource = bsCourses;
-            //grdCourses.DataMember = "Subject";
 
             gridView1.Columns[0].Visible = false;
             grdCourses.UseEmbeddedNavigator = true;

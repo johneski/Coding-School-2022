@@ -56,8 +56,8 @@ namespace Session_11
         private void PetShopForm_Load(object sender, EventArgs e)
         {
             
-            LoginForm loginform = new LoginForm();
-            loginform.ShowDialog();
+            //LoginForm loginform = new LoginForm();
+            //loginform.ShowDialog();
         }
 
       

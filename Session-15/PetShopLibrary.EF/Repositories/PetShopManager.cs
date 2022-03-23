@@ -10,68 +10,51 @@ namespace PetShopLibrary.EF
 {
     public class PetShopManager
     {
-        private PetShopContext _petShopContext;
+        private PetShopContext _context;
+        
         
         public PetShopManager()
         {
+            _context = new PetShopContext();
         }
 
-        //public void Load()
-        //{
-        //    _petShop = new PetShop();
-        //    using var context = new PetShopContext();
-        //    _petShop.Customers = context.Customers.ToList();
-        //    _petShop.Employees = context.Employees.ToList();
-        //    _petShop.Pets = context.Pets.ToList();
-        //    _petShop.PetFoods = context.PetFoods.ToList();
-        //    _petShop.Transactions = context.Transactions.ToList();
-        //}
 
-        public async void Save()
+        public void Save()
         {
-            using var context = new PetShopContext();
-            await context.SaveChangesAsync();
+            _context.SaveChanges();
         }
 
-        public async void Delete(Customer customer) 
+        public void Delete(Customer customer) 
         {
-            using var context = new PetShopContext();
-            var foundCustomer = context.Customers.SingleOrDefault(cust => cust.ID == customer.ID);
+            var foundCustomer = _context.Customers.SingleOrDefault(cust => cust.ID == customer.ID);
             if (foundCustomer is null)
                 return;
             foundCustomer.ObjectStatus = Status.Inactive;
-            await context.SaveChangesAsync();
         }
 
-        public async void Delete(Employee employee)
+        public  void Delete(Employee employee)
         {
-            using var context = new PetShopContext();
-            var foundEmployee = context.Employees.SingleOrDefault(emp => emp.ID == employee.ID);
+            var foundEmployee = _context.Employees.SingleOrDefault(emp => emp.ID == employee.ID);
             if (foundEmployee is null)
                 return;
             foundEmployee.ObjectStatus = Status.Inactive;
-            await context.SaveChangesAsync();
         }
 
-        public async void Delete(Pet pet)
+        public  void Delete(Pet pet)
         {
-            using var context = new PetShopContext();
-            var foundPet = context.Pets.SingleOrDefault(p => p.ID == pet.ID);
+            var foundPet = _context.Pets.SingleOrDefault(p => p.ID == pet.ID);
             if (foundPet is null)
                 return;
             foundPet.ObjectStatus = Status.Inactive;
-            await context.SaveChangesAsync();
         }
 
 
-        public async void Delete(PetFood petFood)
+        public  void Delete(PetFood petFood)
         {
-            using var context = new PetShopContext();
-            var foundFood = context.Customers.SingleOrDefault(food => food.ID == petFood.ID);
+            var foundFood = _context.Customers.SingleOrDefault(food => food.ID == petFood.ID);
             if (foundFood is null)
                 return;
             foundFood.ObjectStatus = Status.Inactive;
-            await context.SaveChangesAsync();
         }
 
         public void DeletePetFoodRange(string brand, int qty)
@@ -88,63 +71,63 @@ namespace PetShopLibrary.EF
 
         public List<Customer> GetCustomers()
         {
-            using var context = new PetShopContext();
-            return context.Customers.ToList();
+            return _context.Customers.ToList();
         }
 
         public List<Transaction> GetTransactions()
         {
-            using var context = new PetShopContext();
-            return context.Transactions.ToList();
+            return _context.Transactions.ToList();
         }
 
         public List<Pet> GetPets()
         {
-            using var context = new PetShopContext();
-            return context.Pets.ToList();
+            return _context.Pets.ToList();
         }
 
         public List<PetFood> GetPetFoods()
         {
-            using var context = new PetShopContext();
 
-            return context.PetFoods.ToList();
+            return _context.PetFoods.ToList();
         }
 
         public List<Employee> GetEmployees()
         {
-            using var context = new PetShopContext();
-            return context.Employees.ToList();
+            return _context.Employees.ToList();
         }
 
-        public async void Add(Customer customer)
+        public void Add(Customer customer)
         {
-            using var context = new PetShopContext();
-            context.Customers.Add(customer);
+            var customerExists = _context.Customers.Where<Customer>(c => c.ID == customer.ID);
+            if (customerExists.Any()) return;
+            _context.Customers.Add(customer);
         }
 
-        public async void Add(Employee employee)
+        public void Add(Employee employee)
         {
-            using var context = new PetShopContext();
-            context.Employees.Add(employee);
+            var employeeExists = _context.Employees.Where<Employee>(e => e.ID == employee.ID);
+            if (employeeExists.Any()) return;
+            _context.Employees.Add(employee);
         }
 
-        public async void Add(Pet pet)
+        public void Add(Pet pet)
         {
-            using var context = new PetShopContext();
-            context.Pets.Add(pet);
+            var petExists = _context.Pets.Where<Pet>(p => p.ID == pet.ID);
+            if (petExists.Any()) return;
+            _context.Pets.Add(pet);
         }
 
-        public async void Add(Transaction transaction)
+        public void Add(Transaction transaction)
         {
-            using var context = new PetShopContext();
-            context.Transactions.Add(transaction);
+            var transExists = _context.Transactions.Where<Transaction>(t => t.ID == transaction.ID);
+            if (transExists.Any()) return;
+            _context.Transactions.Add(transaction);
         }
 
-        public async void Add(PetFood petFood)
+        public void Add(PetFood petFood)
         {
-            using var context = new PetShopContext();
-            context.PetFoods.Add(petFood);
+            var petFoodExists = _context.PetFoods.Where<PetFood>(pf => pf.ID == petFood.ID);
+            if (petFoodExists.Any()) return;
+            _context.PetFoods.Add(petFood);
         }
 
         public PetFood? GetFood(AnimalType type, string brand)

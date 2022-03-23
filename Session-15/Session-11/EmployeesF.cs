@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Columns;
 using PetShopLibrary;
+using PetShopLibrary.EF;
 
 namespace Session_11
 {

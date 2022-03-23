@@ -12,10 +12,10 @@ namespace PetShopLibrary.EF.Configuration
     {
         public void Configure(EntityTypeBuilder<Pet> builder)
         {
-            builder.HasKey(food => food.ID);
-            builder.Property(food => food.Cost).IsRequired().HasPrecision(2);
-            builder.Property(food => food.Price).IsRequired().HasPrecision(2);
-            builder.Property(food => food.Breed).HasMaxLength(50);
+            builder.HasKey(pet => pet.ID);
+            builder.Property(pet => pet.Cost).IsRequired().HasPrecision(7,2);
+            builder.Property(pet => pet.Price).IsRequired().HasPrecision(7,2);
+            builder.Property(pet => pet.Breed).HasMaxLength(50);
         }
     }
 }

@@ -14,9 +14,11 @@ namespace PetShopLibrary.EF.Configuration
         {
             builder.HasKey(food => food.ID);
             builder.Property(food => food.Type).IsRequired();
-            builder.Property(food => food.Cost).IsRequired().HasPrecision(2);
-            builder.Property(food => food.Price).IsRequired().HasPrecision(2);
+            builder.Property(food => food.Cost).IsRequired().HasPrecision(7,2);
+            builder.Property(food => food.Price).IsRequired().HasPrecision(7,2);
             builder.Property(food => food.Brand).HasMaxLength(100);
+            
+            
         }
     }
 }

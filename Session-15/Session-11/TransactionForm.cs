@@ -2,6 +2,7 @@
 using DevExpress.XtraGrid.Views.Base;
 using PetShopLibrary;
 using PetShopLibrary.DataObjects;
+using PetShopLibrary.EF;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -96,10 +97,10 @@ namespace Session_11
 
             var index = cmbFoodBrand.SelectedIndex;
 
-            if(index >= 0)
-                _currentPet.FoodType.Brand = availableBrands[index];
+            //if(index >= 0)
+            //    _currentPet.FoodType.Brand = availableBrands[index];
 
-            var qty = _petShop.GetAvailableFoodQty(_currentPet.FoodType.Brand);
+            var qty = 0;// _petShop.GetAvailableFoodQty(_currentPet.FoodType.Brand);
             if(qty > 0)
             {
                 spinPetFoodQty.Value = 1;
@@ -180,15 +181,15 @@ namespace Session_11
             Guid petId = (Guid)_currentPet.ID;
             Guid custId = (Guid)_currentCustomer.ID;
             decimal petPrice = _currentPet.Price;
-            Guid foodId = (Guid)_currentPet.FoodType.ID;
+            //Guid foodId = (Guid)_currentPet.FoodType.ID;
             int qty = int.Parse(spinPetFoodQty.Value.ToString());
-            decimal foodPrice = _currentPet.FoodType.Price;
+            //decimal foodPrice = _currentPet.FoodType.Price;
 
-            TransactionView transView = new TransactionView(_petShop);
-            Transaction transaction = transView.CreateView(user, custId, petId, petPrice, foodId, qty, foodPrice, _total);
-            _petShop.Add(transaction);
+            //TransactionView transView = new TransactionView(_petShop);
+            //Transaction transaction = transView.CreateView(user, custId, petId, petPrice, foodId, qty, foodPrice, _total);
+            //_petShop.Add(transaction);
             _petShop.Delete(_currentPet);
-            _petShop.DeletePetFoodRange(_currentPet.FoodType.Brand, qty);
+            //_petShop.DeletePetFoodRange(_currentPet.FoodType.Brand, qty);
             _petShop.Save();
         }
 
@@ -196,7 +197,7 @@ namespace Session_11
         {
             var index = cmbFoodBrand.SelectedIndex;
             var availableBrands = _petShop.GetAvailableFoodBrands(_currentPet.AnimalType);
-            _currentPet.FoodType.Brand = availableBrands[index];
+            //_currentPet.FoodType.Brand = availableBrands[index];
             txtFoodPrice.EditValue = _petShop.GetFoodPrice(_currentPet);
         }
     }

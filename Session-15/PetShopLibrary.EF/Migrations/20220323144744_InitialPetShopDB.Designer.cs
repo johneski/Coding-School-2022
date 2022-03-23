@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PetShopLibrary.EF;
 
@@ -11,9 +12,10 @@ using PetShopLibrary.EF;
 namespace PetShopLibrary.EF.Migrations
 {
     [DbContext(typeof(PetShopContext))]
-    partial class PetShopContextModelSnapshot : ModelSnapshot
+    [Migration("20220323144744_InitialPetShopDB")]
+    partial class InitialPetShopDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -74,8 +76,8 @@ namespace PetShopLibrary.EF.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("Salary")
-                        .HasPrecision(7, 2)
-                        .HasColumnType("decimal(7,2)");
+                        .HasPrecision(5, 2)
+                        .HasColumnType("decimal(5,2)");
 
                     b.Property<string>("Surname")
                         .IsRequired()
@@ -102,8 +104,8 @@ namespace PetShopLibrary.EF.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<decimal>("Cost")
-                        .HasPrecision(7, 2)
-                        .HasColumnType("decimal(7,2)");
+                        .HasPrecision(5, 2)
+                        .HasColumnType("decimal(5,2)");
 
                     b.Property<int>("FoodType")
                         .HasColumnType("int");
@@ -115,8 +117,8 @@ namespace PetShopLibrary.EF.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
-                        .HasPrecision(7, 2)
-                        .HasColumnType("decimal(7,2)");
+                        .HasPrecision(5, 2)
+                        .HasColumnType("decimal(5,2)");
 
                     b.HasKey("ID");
 
@@ -135,15 +137,15 @@ namespace PetShopLibrary.EF.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<decimal>("Cost")
-                        .HasPrecision(7, 2)
-                        .HasColumnType("decimal(7,2)");
+                        .HasPrecision(5, 2)
+                        .HasColumnType("decimal(5,2)");
 
                     b.Property<int>("ObjectStatus")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
-                        .HasPrecision(7, 2)
-                        .HasColumnType("decimal(7,2)");
+                        .HasPrecision(5, 2)
+                        .HasColumnType("decimal(5,2)");
 
                     b.Property<int>("Type")
                         .HasColumnType("int");
@@ -169,8 +171,7 @@ namespace PetShopLibrary.EF.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("PetFoodPrice")
-                        .HasPrecision(7, 2)
-                        .HasColumnType("decimal(7,2)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("PetFoodQty")
                         .HasColumnType("int");
@@ -179,21 +180,16 @@ namespace PetShopLibrary.EF.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("PetPrice")
-                        .HasPrecision(7, 2)
-                        .HasColumnType("decimal(7,2)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("TotalPrice")
-                        .HasPrecision(7, 2)
-                        .HasColumnType("decimal(7,2)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("ID");
 
                     b.HasIndex("CustomerID");
 
                     b.HasIndex("EmployeeID");
-
-                    b.HasIndex("PetFoodID")
-                        .IsUnique();
 
                     b.HasIndex("PetID")
                         .IsUnique();
@@ -215,12 +211,6 @@ namespace PetShopLibrary.EF.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PetFood", null)
-                        .WithOne("Transaction")
-                        .HasForeignKey("PetShopLibrary.Transaction", "PetFoodID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Pet", null)
                         .WithOne("Transaction")
                         .HasForeignKey("PetShopLibrary.Transaction", "PetID")
@@ -239,12 +229,6 @@ namespace PetShopLibrary.EF.Migrations
                 });
 
             modelBuilder.Entity("Pet", b =>
-                {
-                    b.Navigation("Transaction")
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("PetFood", b =>
                 {
                     b.Navigation("Transaction")
                         .IsRequired();

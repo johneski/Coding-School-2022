@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PetShopLibrary;
 using PetShopLibrary.DataObjects;
+using PetShopLibrary.EF;
 
 namespace Session_11
 {
@@ -351,7 +352,6 @@ namespace Session_11
                 CustomerList = x.GetCustomers();
                 gridCustomerList.Refresh();
                 x.Save();
-                _petshopManager.Load();
 
 
 

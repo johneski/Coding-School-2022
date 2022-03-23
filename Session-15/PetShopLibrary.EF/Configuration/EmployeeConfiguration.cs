@@ -16,7 +16,7 @@ namespace PetShopLibrary.EF.Configuration
             builder.Property(employee => employee.ID).ValueGeneratedOnAdd();
             builder.Property(employee => employee.Name).HasMaxLength(50);
             builder.Property(employee => employee.Surname).HasMaxLength(50);
-            builder.Property(employee => employee.Salary).HasPrecision(2);
+            builder.Property(employee => employee.Salary).HasPrecision(7,2);
             builder.Property(employee => employee.EmpType).IsRequired();
         }
     }

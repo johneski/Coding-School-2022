@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PetShopLibrary;
+using System;
 
 public enum EmployeeType
 {
@@ -16,6 +17,7 @@ public class Employee : Person, IEmployee
 {
 	public decimal Salary { get; set; }
 	public EmployeeType EmpType { get; set; }
+	public List<Transaction> Transactions { get; set; }
 
 	public Employee()
     {

@@ -23,7 +23,7 @@ public class PetFood : Product, IFood
     public FoodType Type { get; set; }
 
     public string Brand { get; set; }
-
+    public Transaction Transaction { get; set; }
     public PetFood()
     {
         Brand = "";

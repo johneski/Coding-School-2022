@@ -27,23 +27,11 @@
         public int PetFoodQty { get; set; }
         public decimal PetFoodPrice { get; set; }
         public decimal TotalPrice { get; set; }
-
-
         public Transaction()
         {
             ID = Guid.NewGuid();
             Date = DateTime.Now;
         }
 
-        public Transaction(Guid customerID, Guid employeeID, Guid petID, decimal petPrice, Guid petFoodID, int petFoodQty, decimal petFoodPrice) : this()
-        {
-            CustomerID = customerID;
-            EmployeeID = employeeID;
-            PetID = petID;
-            PetPrice = petPrice;
-            PetFoodID = petFoodID;
-            PetFoodQty = petFoodQty;
-            PetFoodPrice = petFoodPrice;
-        }
     }
 }

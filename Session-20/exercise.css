@@ -1,6 +1,25 @@
 body{
-    margin-top: 10%;
+    margin-top: 20px;
 }
+
+form {
+    width: 50%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+
+table {
+    margin-bottom: 50px;
+}
+
+table:hover { 
+    cursor: pointer;
+}
+
+#customerDetails {
+    width: 50%;
+}
+
 
 .center {
     display: flex;
@@ -9,8 +28,23 @@ body{
 
 label {
     margin-right: 10px;
+    width: 60px;
+}
+
+input{
+    margin-right: 15px;
+    margin-bottom: 10px;
 }
 
 button {
     margin: 10px;
+}
+
+.row {
+    display: flex;
+}
+
+#insert{
+    width: 10rem;
+    height: 2rem;
 }

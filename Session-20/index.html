@@ -9,6 +9,7 @@
 		<title>Document</title>
 	</head>
 	<body>
+        <h1>Exercise 1 & 2</h1>
 		<div class="center">
 			<label for="txtInput">Input</label>
 			<input type="text" id="txtInput" />
@@ -18,5 +19,51 @@
             <button onClick="ReverseInput()" >Reverse</button>
             <button onClick="IsPalindrome()">Is Palindrome?</button>
         </div>   
+        <h1>Exercise 3</h1>
+        <form action="#" onSubmit="ParseFormData(); return false;">
+            <fieldset>
+                <legend>New Customer</legend>
+                <div class="row">
+                    <label for="txtName">Name</label>
+                    <input type="text" id="txtName" required pattern="[A-Za-z]{1,20}" title="Name cannot contain numbers or symbols">
+                    <label for="txtSurname">Surname</label>
+                    <input type="text" id="txtSurname" required pattern="[A-Za-z]{1,20}" title="Surname cannot contain numbers or symbols">
+                </div>
+                <div class="row">
+                    <label for="txtAge">Age</label>
+                    <input type="number" min="10" id="txtAge" required>
+                    <input type="radio" name="Gender" value="Male" required>Male</input>
+                    <input type="radio" name="Gender" value="Female" required>Female</input>
+                </div>
+            <button type="submit"  id="insert">Insert</button>
+        </fieldset>
+        </form>
+
+        <table id="customerTable">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Age</th>
+                <th>Gender</th>
+            </tr>
+            </thead>
+        </table>
+
+        <fieldset id="customerDetails">
+            <legend>Customer Details</legend>
+            <div class="row">
+                <label for="txtNameDetails">Name</label>
+                <input type="text" id="txtNameDetails" readonly>
+                <label for="txtSurname">Surname</label>
+                <input type="text" id="txtSurnameDetails" readonly>
+            </div>
+            <div class="row">
+                <label for="txtAge">Age</label>
+                <input type="text" id="txtAgeDetails" readonly>
+                <label for="txtGenderDetails">Gender</label>
+                <input type="text" id="txtGenderDetails" readonly>
+            </div>
+        </fieldset>
 	</body>
 </html>

@@ -56,3 +56,27 @@ function SelectedRow(e){
     document.querySelector('#txtAgeDetails').value = this.children[2].innerText;
     document.querySelector('#txtGenderDetails').value = this.children[3].innerText;
 }
+
+function IncrementString(){
+    let input = document.querySelector('#txtInput').value;
+    if(!Number.parseInt(input[input.length-1]) && Number.parseInt(input[input.length-1]) !== 0){
+        document.querySelector('#txtInput').value = input+'1';
+        return;
+    }
+
+    let index = -1;
+    for(i=input.length-1;i>=0;i--){
+        if(Number.parseInt(input[i]) || Number.parseInt(input[i]) === 0){
+            index = i;
+        }else{
+            break;
+        }
+    }
+
+    if(index >= 0){
+        document.querySelector('#txtInput').value = input.slice(0, index) + (+input.slice(index) + 1);
+        return;
+    }
+
+    console.log(matched);
+}

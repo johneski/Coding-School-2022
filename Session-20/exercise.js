@@ -10,7 +10,7 @@ function ReverseString(input){
 function IsPalindrome(e){
     let value = document.querySelector('#txtInput').value;
     let reversed = ReverseString(value);
-    if(value === reversed) {
+    if(value.toLowerCase() === reversed.toLowerCase()) {
         alert(`It is Palindrome!!\nOriginal: ${value}\nReversed: ${reversed}`);
         return;
     }

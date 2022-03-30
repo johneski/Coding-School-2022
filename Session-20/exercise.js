@@ -9,6 +9,12 @@ function ReverseString(input){
 
 function IsPalindrome(e){
     let value = document.querySelector('#txtInput').value;
+
+    if(value.length <= 1) {
+        alert("There has to be 2 or more letters");
+        return;
+    }
+
     let reversed = ReverseString(value);
     if(value.toLowerCase() === reversed.toLowerCase()) {
         alert(`It is Palindrome!!\nOriginal: ${value}\nReversed: ${reversed}`);
